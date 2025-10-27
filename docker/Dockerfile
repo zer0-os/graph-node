@@ -98,12 +98,13 @@ EXPOSE 8030
 
 RUN apt-get update \
     && apt-get install -y libpq-dev ca-certificates \
-    netcat-openbsd
+    netcat-openbsd nginx
 
 ADD docker/wait_for docker/start /usr/local/bin/
 COPY --from=graph-node-build /usr/local/bin/graph-node /usr/local/bin/graphman /usr/local/bin/
 COPY --from=graph-node-build /etc/image-info /etc/image-info
 COPY --from=envsubst /go/bin/envsubst /usr/local/bin/
+ADD docker/nginx.conf.template /etc/nginx/nginx.conf.template
 COPY docker/Dockerfile /Dockerfile
 CMD ["start"]
 
