@@ -15,7 +15,7 @@ http {
     # Support WebSocket upgrades when needed
     map $http_upgrade $connection_upgrade {
         default upgrade;
-        ''      close;
+        "" close;
     }
 
     # Route GraphQL requests to HTTP or WS backend based on Upgrade header
