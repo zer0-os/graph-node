@@ -1,3 +1,12 @@
+# Fork changes
+
+This fork adds an nginx reverse proxy that allows all of the ports to be exposed on different routes
+
+8000/8001 -> /
+8020 -> /rpc
+8030 -> /index-node
+8040 -> /metrics
+
 # Graph Node
 
 [![Build Status](https://github.com/graphprotocol/graph-node/actions/workflows/ci.yml/badge.svg)](https://github.com/graphprotocol/graph-node/actions/workflows/ci.yml?query=branch%3Amaster)
